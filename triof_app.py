@@ -23,7 +23,7 @@ def home():
 def insert():
     open_waste_slot()
     waste = take_trash_picture()
-    trash = os.path.join("./static/images", "test.jpg")
+    trash = os.path.join("./static", "test.jpg")
     shutil.copyfile(waste, trash)
 
     return render_template('insert.html')
@@ -40,7 +40,7 @@ def pick_type():
             'Content-Type': 'application/octet-stream'
         }
 
-        with open(app.root_path + "/static/images/test.jpg", "rb") as image_contents:
+        with open(app.root_path + "/static/test.jpg", "rb") as image_contents:
             r = requests.post(url, headers=headers, data=image_contents.read())
             r_json = r.json()
             data = r_json['predictions']
