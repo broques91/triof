@@ -1,0 +1,20 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+scipy = "==1.4.1"
+numpy = "==1.16.2"
+Flask = "==1.0.3"
+pillow = "*"
+matplotlib = "*"
+azureml-sdk = "*"
+azure-cognitiveservices-vision-computervision = "*"
+azure-cognitiveservices-vision-customvision = "*"
+python-dotenv = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.8"

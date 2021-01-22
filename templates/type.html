@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<!--
+	Identity by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Triof - Select</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/static/css/main.css" />
+		<noscript><link rel="stylesheet" href="/static/css/noscript.css" /></noscript>
+
+        <style>
+            #wrapper:before{
+                content: normal;
+            }
+        </style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<section id="main">
+						<header>														
+							<p>VEUILLEZ SÉLECTIONNER LE TYPE DE DÉCHET</p>
+						</header>
+						
+						<span id="tagname" style="visibility: hidden">{{tagname}}</span>
+
+						<form method="post" action="/confirmation">
+							<div class="fields text-left">
+
+
+								<div class="field">
+
+										<input
+											type="radio"
+											name="type"
+											id="bouteille"
+
+											value="Bouteille plastique"
+										>
+
+                                  		<label for="bouteille">Bouteille plastique</label>
+									
+										<input
+											type="radio"
+											name="type"
+											id="gobelet"
+											
+											value="gobelet"
+										>
+                                  		<label for="gobelet">Gobelet en plastique</label>
+
+										<input
+											type="radio"
+											name="type"
+											id="couvert"
+
+											value="couvert"
+										>
+										<label for="couvert">Couverts en plastique</label>
+									
+								  <hr >
+								  <p>Choix Recommandé</p>
+								  <p><span class="result">{{result}}</span></p> 
+
+								</div>
+
+                                <div class="field">
+                                    <input type="submit" value="valider"/>
+								</div>
+								
+
+							</div>
+						</form>
+
+					</section>
+
+			</div>
+
+		<!-- Scripts -->
+			<script>
+
+				tag = document.getElementById("tagname");
+				bottle = document.getElementById("bouteille");
+				cup = document.getElementById("gobelet");
+				cutlery = document.getElementById("couvert");
+
+				if ('addEventListener' in window) {
+					window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\bis-preload\b/, ''); });
+					document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
+				}
+
+				if (tag == 'bouteille en plastique') {
+					bottle.setAttribute("checked", "checked");
+				} else if (tag == 'gobelet en plastique') {
+					cup.setAttribute("checked", "checked");
+				} else {
+					cutlery.setAttribute("checked", "checked");
+				}
+
+			</script>
+
+	</body>
+</html>
